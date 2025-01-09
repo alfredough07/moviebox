@@ -29,13 +29,13 @@ const Login = ({ onLogin }) => {
         <input
           className="email-input"
           type="email"
-          placeholder="Email"
+          placeholder="demoEmail: demo@moviebox.com"
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           className="password-input"
           type="password"
-          placeholder="Password"
+          placeholder="demoPassword: password"
           onChange={(e) => setPassword(e.target.value)}
         />
         <button className="login-button" onClick={handleSignUp}>
