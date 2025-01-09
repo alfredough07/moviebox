@@ -52,7 +52,7 @@
 }
 .logout-button:hover {
   background-color: #fff;
-  color: #bb86fc;
+  color: #1e1e1e;
   transform: translateY(-3px);
 }
 a:hover {
