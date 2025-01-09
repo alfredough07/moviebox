@@ -38,8 +38,12 @@ const Login = ({ onLogin }) => {
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button className="login-button" onClick={handleSignUp}>Sign Up</button>
-        <button className="login-button" onClick={handleSignIn}>Sign In</button>
+        <button className="login-button" onClick={handleSignUp}>
+          Sign Up
+        </button>
+        <button className="login-button" onClick={handleSignIn}>
+          Sign In
+        </button>
       </div>
     </div>
   );
