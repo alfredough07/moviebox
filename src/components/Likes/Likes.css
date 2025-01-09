@@ -1,0 +1,16 @@
+.likes-container{
+    background-color: #1E1E1E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+    height:100vh;
+    
+}
+.likes-container h1 {
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.8rem;
+  }

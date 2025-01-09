@@ -1,0 +1,53 @@
+.movie-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  background-color: #1e1e1e;
+}
+
+.movie-card {
+  position: relative; /* Set relative positioning for the card */
+  width: 200px;
+  height: 420px;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #2a2a2a;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.like-button {
+  position: absolute; /* Set position relative to the card */
+  bottom: 10px; /* Distance from the bottom */
+  right: 10px; /* Distance from the right */
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 40px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 8px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.popular-movies {
+  background-color: #1e1e1e;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.8rem;
+}
+.movie-card h3 {
+  color: #fff;
+}
