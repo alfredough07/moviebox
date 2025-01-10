@@ -10,7 +10,6 @@
   position: relative; /* Set relative positioning for the card */
   width: 200px;
   height: 420px;
-  cursor: pointer;
   text-align: center;
   border: 1px solid #bbb;
   border-radius: 8px;
@@ -50,4 +49,23 @@
 }
 .movie-card h3 {
   color: #fff;
+}
+.searchbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 15px;
+}
+.searchbar {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.searchbar input {
+  padding: 10px;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  width: 200px;
 }

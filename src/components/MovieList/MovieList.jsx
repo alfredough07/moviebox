@@ -6,17 +6,20 @@ import {
   removeLike,
   addLike,
 } from "../../firebase/firestoreFunctions";
+import Searchbar from "../Searchbar/Searchbar";
 
 const MovieList = ({ user, likes, setLikes }) => {
   const [movies, setMovies] = useState([]);
+  const [query, setQuery] = useState(""); // Add query state
   const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
   useEffect(() => {
     const fetchMovies = async () => {
+      const url = query
+        ? `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=1&include_adult=false`
+        : `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
       try {
-        const response = await fetch(
-          `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
-        );
+        const response = await fetch(url);
 
         if (!response.ok) {
           throw new Error(`Failed to fetch movies: ${response.statusText}`);
@@ -30,7 +33,7 @@ const MovieList = ({ user, likes, setLikes }) => {
     };
 
     fetchMovies(); // Call the fetch function on component mount
-  }, [API_KEY]);
+  }, [API_KEY, query]);
 
   //Check like
   const isLiked = (movieId) => likes.some((movie) => movie.id === movieId);
@@ -54,7 +57,10 @@ const MovieList = ({ user, likes, setLikes }) => {
   };
   return (
     <div>
-      <h2 className="popular-movies">Popular Movies</h2>
+      <div className="searchbar-container">
+        <h2 className="popular-movies">{query ?"Search Results" :"Popular Movies"}</h2>
+        <Searchbar onSearch={setQuery}/>
+      </div>
       <div className="movie-grid">
         {movies.map((movie) => (
           <MovieCard
