@@ -4,8 +4,8 @@ import { signIn, signUp } from "../../firebase/authFunctions";
 import "./Login.css";
 
 const Login = ({ onLogin }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("demo@moviebox.com");
+  const [password, setPassword] = useState("password");
 
   const handleSignUp = async () => {
     try {
@@ -29,13 +29,13 @@ const Login = ({ onLogin }) => {
         <input
           className="email-input"
           type="email"
-          placeholder="demoEmail: demo@moviebox.com"
+          value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           className="password-input"
           type="password"
-          placeholder="demoPassword: password"
+          value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
         <button className="login-button" onClick={handleSignUp}>
